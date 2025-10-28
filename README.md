@@ -38,7 +38,7 @@ Once installed, edit any issue comment. A “Show comment edit history” link a
 The revision is only visible after page refresh.
 
 ## Localization
-
+Locales in the list are existing, but most of them might be incorrect due to translation.
 | Locale | Status        |
 |--------|----------------|
 | en     | Full support   |
