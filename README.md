@@ -2,11 +2,17 @@
 
 Redmine plugin that keeps an audit trail of edited issue comments and exposes the previous revisions directly in the issue history.
 
+Tested with Redmine 6.1 bookworm
+
 ## Features
 
 - Captures every change made to the notes of an issue journal entry.
 - Stores the full text of each revision alongside the editor and timestamp.
 - Adds a toggleable panel under each updated comment so all users can review the prior versions.
+
+## Screenshot
+
+![Comment Edit History Example](example.png)
 
 ## Installation
 
@@ -28,6 +34,8 @@ Redmine plugin that keeps an audit trail of edited issue comments and exposes th
 ## Usage
 
 Once installed, edit any issue comment. A “Show comment edit history” link appears beneath the entry, exposing all recorded revisions.
+
+The revision is only visible after page refresh.
 
 ## Localization
 
