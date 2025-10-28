@@ -2,7 +2,7 @@
 
 Redmine plugin that keeps an audit trail of edited issue comments and exposes the previous revisions directly in the issue history.
 
-Tested with Redmine 6.1 bookworm
+Tested with Redmine 6.1 bookworm, 6.0.5
 
 ## Features
 
