@@ -5,7 +5,7 @@ Redmine::Plugin.register :comment_edit_history do
   author 'Jonas Liubinas'
   description 'Keeps a visible history of edits made to issue comments.'
   version '0.1.0'
-  url 'https://github.com/jonasliu95'
+  url 'https://github.com/jonasliu95/comment_edit_history'
   author_url 'https://github.com/jonasliu95'
   requires_redmine version_or_higher: '6.0.0'
 end
