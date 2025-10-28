@@ -1,0 +1,4 @@
+en:
+  label_comment_edit_history_show: "Show full comment edit history"
+  label_comment_edit_history_indicator: "Edited (%{count})"
+  label_comment_edit_history_current: "Current"

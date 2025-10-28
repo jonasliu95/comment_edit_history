@@ -1,0 +1,4 @@
+de:
+  label_comment_edit_history_show: "Vollständige Kommentar-Bearbeitungshistorie anzeigen"
+  label_comment_edit_history_indicator: "Bearbeitet (%{count})"
+  label_comment_edit_history_current: "Aktuell"

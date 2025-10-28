@@ -1,0 +1,4 @@
+ja:
+  label_comment_edit_history_show: "コメント編集履歴をすべて表示"
+  label_comment_edit_history_indicator: "編集済み (%{count})"
+  label_comment_edit_history_current: "現在"

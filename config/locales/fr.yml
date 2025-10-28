@@ -1,0 +1,4 @@
+fr:
+  label_comment_edit_history_show: "Afficher l'historique complet des modifications du commentaire"
+  label_comment_edit_history_indicator: "Modifié (%{count})"
+  label_comment_edit_history_current: "Actuel"

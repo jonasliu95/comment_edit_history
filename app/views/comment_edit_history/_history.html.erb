@@ -1,0 +1,58 @@
+<% if journal.present? && journal.respond_to?(:note_versions) %>
+  <% note_versions = journal.note_versions.includes(:edited_by).recent_first %>
+  <% if note_versions.any? %>
+    <% panel_id = "comment-edit-history-#{journal.id}" %>
+    <% history_count = note_versions.size %>
+    <div class="comment-edit-history" data-comment-edit-history-panel-id="<%= panel_id %>">
+      <%= link_to l(:label_comment_edit_history_indicator, count: history_count),
+                  "#",
+                  class: 'icon icon-history comment-edit-history__link',
+                  title: l(:label_comment_edit_history_show),
+                  data: { toggle_target: panel_id },
+                  'aria-controls': panel_id,
+                  'aria-expanded': 'false' %>
+
+      <div class="comment-edit-history__panel" id="<%= panel_id %>" hidden="hidden">
+        <ul class="comment-edit-history__list">
+          <% note_versions.each do |version| %>
+            <li class="comment-edit-history__item">
+              <div class="comment-edit-history__meta">
+                <span class="comment-edit-history__timestamp">
+                  <%= format_time(version.edited_at) %>
+                </span>
+                <% if version.edited_by.present? %>
+                  <span class="comment-edit-history__user">
+                    <%= avatar(version.edited_by, size: '16').html_safe %>
+                    <%= link_to_user(version.edited_by) %>
+                  </span>
+                <% end %>
+              </div>
+              <div class="comment-edit-history__note wiki">
+                <%= textilizable(version.notes) %>
+              </div>
+            </li>
+          <% end %>
+          <li class="comment-edit-history__item comment-edit-history__item--current">
+            <div class="comment-edit-history__meta">
+              <span class="comment-edit-history__timestamp">
+                <%= format_time(journal.created_on) %>
+              </span>
+              <% if journal.user %>
+                <span class="comment-edit-history__user">
+                  <%= avatar(journal.user, size: '16').html_safe %>
+                  <%= link_to_user(journal.user) %>
+                </span>
+              <% end %>
+              <span class="comment-edit-history__badge">
+                <%= l(:label_comment_edit_history_current) %>
+              </span>
+            </div>
+            <div class="comment-edit-history__note wiki">
+              <%= textilizable(journal.notes) %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,4 @@
+lt:
+  label_comment_edit_history_show: "Rodyti visą komentaro keitimų istoriją"
+  label_comment_edit_history_indicator: "Redaguota (%{count})"
+  label_comment_edit_history_current: "Dabartinis"
