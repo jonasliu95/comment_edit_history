@@ -26,7 +26,7 @@ Tested with Redmine 6.1 bookworm
 3. Precompile/refresh the plugin assets (optional in development, required in production):
 
    ```bash
-   bundle exec rake redmine:plugins:assets NAME=comment_edit_history RAILS_ENV=production
+   bundle exec rake assets:precompile NAME=comment_edit_history RAILS_ENV=production
    ```
 
 4. Restart Redmine.
