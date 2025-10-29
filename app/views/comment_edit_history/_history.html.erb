@@ -1,7 +1,7 @@
 <% if journal.present? && journal.respond_to?(:note_versions) %>
   <% note_versions = journal.note_versions.includes(:edited_by).recent_first.to_a %>
   <% if note_versions.any? %>
-    <% current_timestamp = note_versions.first&.edited_at || journal.created_on %>
+    <% current_timestamp = journal.updated_on || journal.created_on %>
     <% panel_id = "comment-edit-history-#{journal.id}" %>
     <% history_count = note_versions.size %>
     <div class="comment-edit-history" data-comment-edit-history-panel-id="<%= panel_id %>">

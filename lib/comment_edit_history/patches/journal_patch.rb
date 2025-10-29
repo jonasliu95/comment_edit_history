@@ -70,10 +70,23 @@ module CommentEditHistory
       end
 
       def editor_timestamp
-        if respond_to?(:updated_on) && updated_on.present?
+        historical_timestamp = previous_timestamp_for_history
+        return historical_timestamp if historical_timestamp.present?
+
+        Time.current
+      end
+
+      def previous_timestamp_for_history
+        if respond_to?(:attribute_before_last_save)
+          attribute_before_last_save('updated_on')
+        elsif respond_to?(:updated_on_before_last_save)
+          updated_on_before_last_save
+        elsif respond_to?(:attribute_in_database)
+          attribute_in_database('updated_on')
+        elsif respond_to?(:updated_on_was)
+          updated_on_was
+        elsif respond_to?(:updated_on) && updated_on.present?
           updated_on
-        else
-          Time.current
         end
       end
 
