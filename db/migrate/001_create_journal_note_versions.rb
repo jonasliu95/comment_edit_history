@@ -8,8 +8,10 @@ class CreateJournalNoteVersions < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index :comment_edit_history_journal_note_versions, :journal_id
-    add_index :comment_edit_history_journal_note_versions, :edited_by_id
+    add_index :comment_edit_history_journal_note_versions, :journal_id,
+              name: :idx_ceh_journal_note_versions_journal
+    add_index :comment_edit_history_journal_note_versions, :edited_by_id,
+              name: :idx_ceh_journal_note_versions_editor
 
     add_foreign_key :comment_edit_history_journal_note_versions, :journals, column: :journal_id
     add_foreign_key :comment_edit_history_journal_note_versions, :users, column: :edited_by_id
